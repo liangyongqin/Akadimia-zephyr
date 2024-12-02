@@ -1,0 +1,27 @@
+manifest:
+  remotes:
+    - name: Akadimia-Robot
+      url-base: https://github.com/Akadimia-Robot/
+
+  defaults:
+    remote: Akadimia-Robot
+
+  projects:
+    - name: zephyr
+      repo-path: zephyr
+      revision: v4.0.0
+      import:
+        name-allowlist:
+          - zephyr
+    - name: mcuboot
+      repo-path: mcuboot
+      revision: eb942067989569f9cf319b087d0bb16b16effd86
+      path: bootloader/mcuboot
+    - name: hal_stm32
+      repo-path: hal_stm32
+      revision: d5fb525486544f7fcec365a89c2ca5ea936618f5
+      path: modules/hal/hal_stm32 
+    - name: renode
+      repo-path: renode
+      revision: 03756cb5a3112fb94aeffef227ddec48db531cad
+      path: tools/renode
