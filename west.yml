@@ -1,8 +1,9 @@
 manifest:
   remotes:
     - name: Akadimia-Robot
-      url-base: https://github.com/Akadimia-Robot/
-
+      url-base: https://github.com/Akadimia-Robot
+    - name: zephyr
+      url-base: https://github.com/zephyrproject-rtos
   defaults:
     remote: Akadimia-Robot
 
@@ -12,15 +13,15 @@ manifest:
       revision: v4.0.0
       import:
         name-allowlist:
-          - zephyr
-    - name: mcuboot
-      repo-path: mcuboot
-      revision: eb942067989569f9cf319b087d0bb16b16effd86
-      path: bootloader/mcuboot
-    - name: hal_stm32
-      repo-path: hal_stm32
-      revision: d5fb525486544f7fcec365a89c2ca5ea936618f5
-      path: modules/hal/hal_stm32 
+          - cmsis
+          - cmsis-dsp
+          - cmsis-nn
+          - hal_stm32
+          - babblesim
+          - mcuboot
+          - fatfs
+          - segger
+          - lvgl
     - name: renode
       repo-path: renode
       revision: 03756cb5a3112fb94aeffef227ddec48db531cad

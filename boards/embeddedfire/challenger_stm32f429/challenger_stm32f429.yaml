@@ -1,0 +1,11 @@
+identifier: challenger_stm32f429
+name: embeddedfired challenger stm32f429
+type: mcu
+arch: arm
+toolchain:
+  - zephyr
+  - gnuarmemb
+ram:
+flash:
+supported:
+vendor: embeddedfired
