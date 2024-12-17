@@ -1,0 +1,7 @@
+config PRINTF
+    bool "print enable or not"
+    default y
+    help
+        print enable or not
+
+source "Kconfig.zephyr"

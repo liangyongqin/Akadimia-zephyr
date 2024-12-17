@@ -1,0 +1,1 @@
+"mcuboot":"/home/liangyq/workspace/Akadimia-workspace/bootloader/mcuboot":"/home/liangyq/workspace/Akadimia-workspace/bootloader/mcuboot/boot/zephyr/sysbuild"

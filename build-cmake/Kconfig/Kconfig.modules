@@ -1,0 +1,51 @@
+menu "akadimia (/home/liangyq/workspace/Akadimia-workspace/akadimia)"
+osource "/home/liangyq/workspace/Akadimia-workspace/akadimia/Kconfig"
+config ZEPHYR_AKADIMIA_MODULE
+	bool
+	default y
+endmenu
+menu "cmsis (/home/liangyq/workspace/Akadimia-workspace/modules/hal/cmsis)"
+osource "$(ZEPHYR_CMSIS_KCONFIG)"
+config ZEPHYR_CMSIS_MODULE
+	bool
+	default y
+endmenu
+menu "cmsis-dsp (/home/liangyq/workspace/Akadimia-workspace/modules/lib/cmsis-dsp)"
+osource "$(ZEPHYR_CMSIS_DSP_KCONFIG)"
+config ZEPHYR_CMSIS_DSP_MODULE
+	bool
+	default y
+endmenu
+menu "cmsis-nn (/home/liangyq/workspace/Akadimia-workspace/modules/lib/cmsis-nn)"
+osource "$(ZEPHYR_CMSIS_NN_KCONFIG)"
+config ZEPHYR_CMSIS_NN_MODULE
+	bool
+	default y
+endmenu
+menu "fatfs (/home/liangyq/workspace/Akadimia-workspace/modules/fs/fatfs)"
+osource "$(ZEPHYR_FATFS_KCONFIG)"
+config ZEPHYR_FATFS_MODULE
+	bool
+	default y
+endmenu
+config ZEPHYR_HAL_STM32_MODULE
+	bool
+	default y
+
+config ZEPHYR_HAL_STM32_MODULE_BLOBS
+	bool
+menu "lvgl (/home/liangyq/workspace/Akadimia-workspace/modules/lib/gui/lvgl)"
+osource "/home/liangyq/workspace/Akadimia-workspace/modules/lib/gui/lvgl/Kconfig"
+config ZEPHYR_LVGL_MODULE
+	bool
+	default y
+endmenu
+config ZEPHYR_MCUBOOT_MODULE
+	bool
+	default y
+menu "segger (/home/liangyq/workspace/Akadimia-workspace/modules/debug/segger)"
+osource "$(ZEPHYR_SEGGER_KCONFIG)"
+config ZEPHYR_SEGGER_MODULE
+	bool
+	default y
+endmenu

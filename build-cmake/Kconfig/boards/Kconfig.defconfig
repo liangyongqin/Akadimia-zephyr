@@ -1,0 +1,2 @@
+# Load Zephyr board defconfig descriptions.
+osource "/home/liangyq/workspace/Akadimia-workspace/akadimia/boards/embeddedfire/challenger_stm32f429/Kconfig.defconfig"

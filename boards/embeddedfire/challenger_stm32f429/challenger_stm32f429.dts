@@ -1,29 +1,9 @@
 /dts-v1/;
-#include <st/f4/stm32f4.dtsi>
+#include <st/f4/stm32f429Ig.dtsi>
 #include <st/f4/stm32f429i(e-g)tx-pinctrl.dtsi>
-#include <mem.h>
-
 / {
     model = "embeddeddired challenger stm32f429 board";
     compatible = "embeddeddired,challenger";
-
-	ccm0: memory@10000000 {
-		compatible = "zephyr,memory-region", "st,stm32-ccm";
-		reg = <0x10000000 DT_SIZE_K(64)>;
-		zephyr,memory-region = "CCM";
-	};
-
-	sram0: memory@20000000 {
-		reg = <0x20000000 DT_SIZE_K(192)>;
-	};
-
-	soc {
-		flash-controller@40023c00 {
-			flash0: flash@8000000 {
-				reg = <0x08000000 DT_SIZE_K(2048)>;
-			};
-		};
-	};
 
     chosen {
         zephyr,console = &usart1;
@@ -33,7 +13,7 @@
         zephyr,ccm = &ccm0;
     };
 
-    leds {
+    gpio-leds {
         compatible = "gpio-leds";
         red_led: led_0 {
             gpios = <&gpioh 10 GPIO_ACTIVE_HIGH>;
@@ -49,10 +29,24 @@
         };
     };
 
+	gpio-keys {
+		compatible = "gpio-keys";
+		key_0: key_0 {
+			gpios = <&gpioc 13 GPIO_ACTIVE_HIGH>;
+			label = "key 0";
+		};
+		key_1: key_1 {
+			gpios = <&gpioa 0 GPIO_ACTIVE_HIGH>;
+			label = "key 1";
+		};
+	};
+
     aliases {
         led0 = &red_led;
         led1 = &green_led;
         led2 = &blue_led;
+		key0 = &key_0;
+		key1 = &key_1;
     };
 
 };
@@ -88,4 +82,11 @@
 	pinctrl-names = "default";
 	current-speed = <115200>;
 	status = "okay";
+};
+
+&i2c1 {
+	pinctrl-0 = <&i2c1_scl_pb8 &i2c1_sda_pb9>;
+	pinctrl-names = "default";
+	status = "okay";
+	clock-frequency = <I2C_BITRATE_FAST>;
 };
