@@ -22,7 +22,7 @@ manifest:
           - fatfs
           - segger
           - lvgl
-    - name: renode
-      repo-path: renode
-      revision: 03756cb5a3112fb94aeffef227ddec48db531cad
-      path: tools/renode
+    # - name: renode
+    #   repo-path: renode
+    #   revision: 03756cb5a3112fb94aeffef227ddec48db531cad
+    #   path: tools/renode
